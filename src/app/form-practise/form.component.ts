@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form-practise',
@@ -7,11 +7,12 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./form.component.css'],
 })
 export class FormComponent {
+  public submitted = false;
   userForm = new FormGroup({
-    title: new FormControl(''),
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
-    acceptTerm: new FormControl(''),
+    title: new FormControl('', Validators.required),
+    firstName: new FormControl('', Validators.required),
+    lastName: new FormControl('', Validators.required),
+    acceptTerm: new FormControl('', Validators.required),
   });
 
   get f() {
@@ -19,6 +20,10 @@ export class FormComponent {
   }
 
   onSubmit() {
+    this.submitted = true;
+    if (this.userForm.invalid) {
+      return;
+    }
     const result = this.userForm.value;
     console.log('Title:' + result.title);
     console.log('First Name:' + result.firstName);

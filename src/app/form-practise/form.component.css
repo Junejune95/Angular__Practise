@@ -5,10 +5,12 @@ form {
 .field {
   display: flex;
   margin-bottom: 16px;
+  flex-direction: column;
 }
 
 .field label {
   width: 120px;
+  margin-bottom: 10px;
 }
 
 .field input {
@@ -18,5 +20,11 @@ form {
 .button-panel {
   display: flex;
   justify-content: end;
+  margin-top: 10px;
+}
+
+.error-msg{
+  color: red;
+  font-weight: 500;
   margin-top: 10px;
 }
