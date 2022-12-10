@@ -1,25 +1,68 @@
-<h3>Form Practise</h3>
+<h3>Using Form Group with Form Control Name</h3>
 
 <div class="container">
-  <form>
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
     <div class="field">
       <label for="title">Title</label>
-      <input type="text" id="title" placeholder="Title" />
+      <input
+        type="text"
+        id="title"
+        placeholder="Title"
+        formControlName="title"
+      />
     </div>
     <div class="field">
       <label for="firstname">First Name</label>
-      <input type="text" id="firstname" placeholder="Write First Name" />
+      <input
+        type="text"
+        id="firstname"
+        placeholder="Write First Name"
+        formControlName="firstName"
+      />
     </div>
     <div class="field">
       <label for="lastname">Last Name</label>
-      <input type="text" id="lastname" placeholder="Write Last Name" />
+      <input
+        type="text"
+        id="lastname"
+        placeholder="Write Last Name"
+        formControlName="lastName"
+      />
     </div>
     <div>
-      <input type="checkbox" id="term" />
+      <input type="checkbox" id="term" formControlName="acceptTerm" />
       <label for="term">I accpet the term & conditions.</label>
     </div>
     <div class="button-panel">
-      <button type="button">Submit</button>
+      <button type="submit">Submit</button>
     </div>
   </form>
+
+  <hr />
+
+  <h3>Using Form Group with Form Control</h3>
+  <form (ngSubmit)="onSubmit()">
+    <div class="field">
+      <label for="title">Title</label>
+      <input type="text" id="title" [formControl]="f.title" />
+    </div>
+    <div class="field">
+      <label for="firstName">First Name</label>
+      <input type="text" id="firstName" [formControl]="f.firstName" />
+    </div>
+    <div class="field">
+      <label for="lastName">Last Name</label>
+      <input type="text" id="lastName" [formControl]="f.lastName" />
+    </div>
+    <div>
+      <input type="checkbox" id="acceptTerm" [formControl]="f.acceptTerm" />
+      <label for="acceptTerm"> I accept Terms & Condition.</label>
+    </div>
+    <div class="button-panel">
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+  <pre>
+    {{ userForm.value | json }}
+  </pre>
 </div>
