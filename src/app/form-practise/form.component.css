@@ -1,0 +1,22 @@
+form {
+  width: 300px;
+}
+
+.field {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.field label {
+  width: 120px;
+}
+
+.field input {
+  width: 100%;
+}
+
+.button-panel {
+  display: flex;
+  justify-content: end;
+  margin-top: 10px;
+}
