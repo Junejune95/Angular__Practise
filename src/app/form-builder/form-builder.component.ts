@@ -8,7 +8,7 @@ import { FormBuilder } from '@angular/forms';
   styleUrls: ['./form-builder.component.css'],
 })
 export class FormBuilderComponent {
-  myform = this.fb.group({
+  myForm = this.fb.group({
     firstName: [''],
     lastName: [''],
     about: [''],
@@ -19,4 +19,9 @@ export class FormBuilderComponent {
     }),
   });
   constructor(private fb: FormBuilder) {}
+
+  onSubmit() {
+    console.log('hello');
+    console.log('my form:' + this.myForm.value);
+  }
 }
