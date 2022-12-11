@@ -27,6 +27,11 @@
           class="form-control"
           formControlName="email"
         />
+
+        <div class="invalid-feedback" *ngIf="fg.email.errors">
+          <div *ngIf="fg.email.errors?.['required']">Please enter a email.</div>
+          <div *ngIf="fg.email.errors?.['email']">Please valid a email.</div>
+        </div>
       </div>
       <div class="form-group">
         <label class="form-label" for="phoneNumber">Phone Number</label>

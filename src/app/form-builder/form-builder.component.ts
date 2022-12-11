@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form-builder',
@@ -13,15 +13,24 @@ export class FormBuilderComponent {
     lastName: [''],
     about: [''],
     contact: this.fb.group({
-      email: [''],
+      email: ['', [Validators.required, Validators.email]],
       phoneNumber: [''],
       address: [''],
     }),
   });
   constructor(private fb: FormBuilder) {}
 
+  get f() {
+    return this.myForm.controls;
+  }
+  get fg() {
+    return this.myForm.controls.contact.controls;
+  }
   onSubmit() {
     console.log('hello');
-    console.log('my form:' + this.myForm.value);
+    if (this.myForm.invalid) {
+      return;
+    }
+    console.log('my form:', this.myForm.value);
   }
 }
