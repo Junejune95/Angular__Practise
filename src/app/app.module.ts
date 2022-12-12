@@ -7,9 +7,15 @@ import { AppComponent } from './app.component';
 
 import { FormComponent } from './form-practise/form.component';
 import { FormBuilderComponent } from './form-builder/form-builder.component';
+import { PropertyDecoComponent } from './propertyDecorator/propertydeco.component';
 
 @NgModule({
-  declarations: [AppComponent, FormComponent, FormBuilderComponent],
+  declarations: [
+    AppComponent,
+    FormComponent,
+    FormBuilderComponent,
+    PropertyDecoComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
