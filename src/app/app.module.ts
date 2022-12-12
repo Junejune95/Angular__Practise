@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { FormComponent } from './form-practise/form.component';
 import { FormBuilderComponent } from './form-builder/form-builder.component';
 import { PropertyDecoComponent } from './propertyDecorator/propertydeco.component';
+import { ChildComponent } from './child/child.component';
+import { BrandColorComponent } from './brand-color/brand-color.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,8 @@ import { PropertyDecoComponent } from './propertyDecorator/propertydeco.componen
     FormComponent,
     FormBuilderComponent,
     PropertyDecoComponent,
+    ChildComponent,
+    BrandColorComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],
