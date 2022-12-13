@@ -8,11 +8,12 @@ export class HighlightDirective {
 
   constructor(private el: ElementRef) {
     console.log(this.defaultColor);
-    this.onHighLight(this.defaultColor);
+    this.onHighLight(this.defaultColor ? this.defaultColor : 'blue');
   }
 
   @HostListener('mouseenter')
   onMouseEnter() {
+    console.log(this.defaultColor);
     console.log('enter');
     this.onHighLight('pink');
   }
