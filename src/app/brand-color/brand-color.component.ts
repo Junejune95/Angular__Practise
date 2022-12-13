@@ -4,7 +4,10 @@ import {
   ElementRef,
   AfterViewInit,
   OnInit,
+  ViewChildren,
+  QueryList,
 } from '@angular/core';
+// import { NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-brand-color',
@@ -12,14 +15,21 @@ import {
   styleUrls: ['./brand-color.component.css'],
 })
 export class BrandColorComponent implements OnInit, AfterViewInit {
-  @ViewChild('someElement', { static: false }) someElement: ElementRef;
+  @ViewChild('someElement', { static: false }) elementDynamic: ElementRef;
+  @ViewChild('someElement2', { static: true }) elementStatic: ElementRef;
+
+  // @ViewChildren('NgModel') domReference: QueryList<NgModel>;
+  public userName: any;
+  public userAge: any;
+  public userDesignation: any;
 
   ngOnInit() {
-    console.log(this.someElement);
-    this.someElement.nativeElement.innerHTML = 'Hello Inner HTML';
+    console.log(this.elementStatic);
+    this.elementStatic.nativeElement.innerHTML = 'Hello Static';
   }
 
   ngAfterViewInit() {
-    console.log(this.someElement);
+    console.log(this.elementDynamic);
+    this.elementDynamic.nativeElement.innerHTML = 'Hello Dynamic';
   }
 }
