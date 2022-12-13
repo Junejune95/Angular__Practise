@@ -6,9 +6,9 @@ import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
   styleUrls: ['./brand-color.component.css'],
 })
 export class BrandColorComponent implements AfterViewInit {
-  @ViewChild('herehtml') element: ElementRef;
+  @ViewChild('someElement', { static: false }) someElement: ElementRef;
 
   ngAfterViewInit() {
-    console.log(this.element);
+    console.log(this.someElement);
   }
 }
