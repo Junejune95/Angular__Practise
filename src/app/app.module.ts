@@ -10,6 +10,8 @@ import { FormBuilderComponent } from './form-builder/form-builder.component';
 import { PropertyDecoComponent } from './propertyDecorator/propertydeco.component';
 import { ChildComponent } from './child/child.component';
 import { BrandColorComponent } from './brand-color/brand-color.component';
+import { DirectiveComponent } from './directives/directive.component';
+import { RainBowDirective } from './helpers/rainbow.directive';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { BrandColorComponent } from './brand-color/brand-color.component';
     PropertyDecoComponent,
     ChildComponent,
     BrandColorComponent,
+    DirectiveComponent,
+    RainBowDirective,
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule],
   providers: [],
