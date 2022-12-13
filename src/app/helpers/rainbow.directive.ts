@@ -1,4 +1,4 @@
-import { Directive, HostListener } from '@angular/core';
+import { Directive, HostListener, HostBinding } from '@angular/core';
 
 @Directive({
   selector: '[appRainBow]',
@@ -16,7 +16,10 @@ export class RainBowDirective {
     'lightslategrey',
   ];
 
+  @HostBinding('style.color') color: string;
+  @HostBinding('style.border-color') bordercolor: string;
   @HostListener('keydown') newColor() {
-    console.log('key up');
+    const colorPick = Math.floor(Math.random() * this.possibleColors.length);
+    this.color = this.bordercolor = this.possibleColors[colorPick];
   }
 }
