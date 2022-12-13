@@ -12,6 +12,7 @@ import { ChildComponent } from './child/child.component';
 import { BrandColorComponent } from './brand-color/brand-color.component';
 import { DirectiveComponent } from './directives/directive.component';
 import { RainBowDirective } from './helpers/rainbow.directive';
+import { HighlightDirective } from './helpers/highlight.directive';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { RainBowDirective } from './helpers/rainbow.directive';
     BrandColorComponent,
     DirectiveComponent,
     RainBowDirective,
+    HighlightDirective,
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule],
   providers: [],
