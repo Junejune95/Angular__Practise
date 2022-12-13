@@ -2,7 +2,7 @@ import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-brand-color',
-  templateUrl: './brand-color.component.ts',
+  templateUrl: './brand-color.component.html',
   styleUrls: ['./brand-color.component.css'],
 })
 export class BrandColorComponent implements AfterViewInit {
