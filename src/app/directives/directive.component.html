@@ -1,3 +1,57 @@
 <h3 defaultColor="hotpink" appHighlight>Rainbow textbox</h3>
 
 <input type="text" appRainBow />
+
+<h2>*ngFor and *ngIf</h2>
+
+<ul *ngFor="let person of people">
+  <li class="text-success" *ngIf="person.country == 'MM'">
+    {{ person.name }} {{ person.country }}
+  </li>
+
+  <li class="text-warning" *ngIf="person.country == 'UK'">
+    {{ person.name }} {{ person.country }}
+  </li>
+
+  <li class="text-danger" *ngIf="person.country == 'US'">
+    {{ person.name }} {{ person.country }}
+  </li>
+
+  <li class="text-primary" *ngIf="person.country == 'TH'">
+    {{ person.name }} {{ person.country }}
+  </li>
+</ul>
+
+<h2>*ngFor and *ngSwitch</h2>
+
+<ul *ngFor="let person of people" [ngSwitch]="person.country">
+  <li class="text-success" *ngSwitchCase="'MM'">{{ person.name }}</li>
+
+  <li class="text-warning" *ngSwitchCase="'UK'">{{ person.name }}</li>
+
+  <li class="text-danger" *ngSwitchCase="'US'">{{ person.name }}</li>
+
+  <li class="text-primary" *ngSwitchCase="'TH'">{{ person.name }}</li>
+</ul>
+
+<ng-template #template1>
+  <p>
+    This is our template. It will be displayed on the div
+    *ngTemplateOutlet="myTemplateRef"
+  </p>
+</ng-template>
+
+<ng-template #template2>
+  <p>
+    This is our Template2. It will be displayed on the div
+    *ngTemplateOutlet="myTemplateRef"
+  </p>
+</ng-template>
+
+<ng-container *ngTemplateOutlet="isTemplate2 ? template2 : template1">
+  This text is not displayed
+</ng-container>
+
+<ng-container *ngIf="true">
+  <ng-template [ngIf]="isTemplate2">tre tre</ng-template>
+</ng-container>
