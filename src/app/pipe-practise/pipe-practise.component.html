@@ -1,0 +1,7 @@
+<input type="text" placeholder="Type name" [(ngModel)]="searchTerm" />
+
+<ul *ngFor="let user of users | filterPipe: searchTerm">
+  {{
+    user.name
+  }}
+</ul>

@@ -11,8 +11,10 @@ import { PropertyDecoComponent } from './propertyDecorator/propertydeco.componen
 import { ChildComponent } from './child/child.component';
 import { BrandColorComponent } from './brand-color/brand-color.component';
 import { DirectiveComponent } from './directives/directive.component';
+import { PipeComponent } from './pipe-practise/pipe-practise.component';
 import { RainBowDirective } from './helpers/rainbow.directive';
 import { HighlightDirective } from './helpers/highlight.directive';
+import { FilterPipe } from './helpers/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { HighlightDirective } from './helpers/highlight.directive';
     DirectiveComponent,
     RainBowDirective,
     HighlightDirective,
+    PipeComponent,
+    FilterPipe,
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule],
   providers: [],
