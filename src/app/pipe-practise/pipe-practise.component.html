@@ -1,5 +1,8 @@
 <input type="text" placeholder="Type name" [(ngModel)]="searchTerm" />
 
+<button (click)="changeProperty()">change by Property</button>
+<button (click)="changeReference()">change by Reference</button>
+
 <ul *ngFor="let user of users | filterPipe: searchTerm">
   {{
     user.name
