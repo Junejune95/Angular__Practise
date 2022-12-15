@@ -7,6 +7,9 @@ import { User } from '../helpers/user';
   styleUrls: ['./pipe-practise.component.css'],
 })
 export class PipeComponent {
+  number1 = 1;
+  number2 = 2;
+  
   searchTerm: string;
 
   users: User[] = [
@@ -18,18 +21,19 @@ export class PipeComponent {
     { name: 'raja', age: 20 },
   ];
 
-  changeByProperty() {
+  changeProperty() {
     this.users[0].name = 'ghoul';
   }
 
-  changeByReference() {
-    const refUsers = Object.assign([], this.users);
+  changeReference() {
+    // const refUsers = Object.assign([], this.users);
     // // or
     // const refUsers = [...this.users];
     // // or
-    // const refUsers = this.users.slice();
+    const refUsers = this.users.slice(0, this.users.length - 1);
 
     refUsers[0].name = 'ghoul';
     this.users = refUsers;
+    console.log(this.users);
   }
 }

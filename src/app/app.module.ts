@@ -15,6 +15,8 @@ import { PipeComponent } from './pipe-practise/pipe-practise.component';
 import { RainBowDirective } from './helpers/rainbow.directive';
 import { HighlightDirective } from './helpers/highlight.directive';
 import { FilterPipe } from './helpers/filter.pipe';
+import { CustomPipe } from './helpers/custom.pipe';
+import { CustomImpurePipe } from './helpers/customimpure.pipe';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { FilterPipe } from './helpers/filter.pipe';
     HighlightDirective,
     PipeComponent,
     FilterPipe,
+    CustomPipe,
+    CustomImpurePipe,
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule],
   providers: [],
